@@ -1,11 +1,16 @@
 import { useState } from "react";
-import hamburger from "../Images/icon-menu.svg";;
+import hamburger from "../Images/icon-menu.svg";
+import logo from "../Images/logo.svg";
+import cart from "../Images/icon-cart.svg";
+import user from "../Images/icon-avatar.svg";
+
+
 
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 mb-3">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white mb-3">
         <div className="container px-4 mx-auto flex justify-between flex-wrap items-center">
             <div className=" relative flex lg:w-auto lg:static lg:block lg:justify-start">
                 <button
@@ -13,14 +18,14 @@ export default function Navbar({ fixed }) {
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
                 >
-                <img src={hamburger} />
+                <img src={hamburger} alt="hamburger"/>
                 </button>
-                <p
+                <a
                 className="text-sm font-bold leading-relaxed inline-block mr-4 ml-0 py-2 whitespace-nowrap uppercase text-white"
                 href="#pablo"
                 >
-                pink Tailwind Starter Kit
-                </p>
+                <img src={logo} alt="logo" />
+                </a>
             </div>
 
             <div
@@ -57,7 +62,14 @@ export default function Navbar({ fixed }) {
                 </li>
                 </ul>
             </div>
-            <div>HI</div>
+            <div className="flex">
+                <div>
+                  <img src={cart} alt="cart" />
+                </div>
+                <div>
+                  <img src={user} alt="user" />
+                </div> 
+            </div>
         </div>
       </nav>
     </>
